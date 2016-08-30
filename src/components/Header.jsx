@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Header = () => (
-    <div className="headerDiv">
-        <img src="/static/img/icon.png" alt="logo" />
-        <h1 id="headline">Iqra App</h1>
+    <div className="header">
+        <a href="/" className="logo-container">
+            <img src="/static/img/logo.png" className="logo" alt="logo" />
+        </a>
     </div>
 );
 

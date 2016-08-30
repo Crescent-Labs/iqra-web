@@ -56,9 +56,11 @@ function getSearchResultsRequest(query) {
 
 export const GET_SEARCH_RESULTS_SUCCESS = 'GET_SEARCH_RESULTS_SUCCESS';
 function getSearchResultsSuccess(json) {
+    localStorage.setItem('query', json.result.queryText);
     return {
         type: GET_SEARCH_RESULTS_SUCCESS,
         matches: json.result.matches,
+        query: json.result.queryText,
     };
 }
 
@@ -69,8 +71,7 @@ function getSearchResultsFailure() {
     };
 }
 
-export const UPDATE_QUERY = 'UPDATE_QUERY';
-export function updateQuery(query) {
+export function getSearchResults(query) {
     return dispatch => {
         dispatch(getSearchResultsRequest(query));
 
@@ -98,7 +99,7 @@ export function updateQuery(query) {
                 throw error;
             })
             .then(json => {
-                console.log(json.result.matches);
+                console.log(json.result);
                 dispatch(getSearchResultsSuccess(json));
             })
             .catch(error => {
@@ -114,4 +115,9 @@ export function updatePartialQuery(query) {
         type: UPDATE_PARTIAL_QUERY,
         query,
     };
+}
+
+export const RESET_SEARCH = 'RESET_SEARCH';
+export function resetSearch() {
+    return { type: RESET_SEARCH };
 }

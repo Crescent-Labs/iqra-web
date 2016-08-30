@@ -1,0 +1,29 @@
+.header {
+    width: 100%;
+    height: $header-height;
+    background-color: $colour-primary;
+
+    .logo-container {
+        width: $header-height;
+        height: $header-height;
+        display: block;
+
+        &:hover {
+            background-color: $colour-primary-dark;
+            cursor: pointer;
+
+            .logo {
+                @include transform-rotate(360deg);
+            }
+        }
+
+        .logo {
+            @include transition-transform();
+            @include transition-duration(1s);
+            width: $header-height;
+            height: $header-height;
+            padding: 15px;
+            overflow: hidden;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { startRecording, updateRecordMessage, updateRecognizingState,
-    setUnableToRecord, updateQuery, updatePartialQuery } from '../actions/recording';
+import { startRecording, updateRecordMessage, updateRecognizingState, setUnableToRecord,
+    getSearchResults, updatePartialQuery, resetSearch } from '../actions/recording';
 import Recording from '../components/Recording.jsx';
 
 
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
     startRecognitionTime: state.startRecognitionTime,
     query: state.query,
     partialQuery: state.partialQuery,
+    results: state.results,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -23,14 +24,17 @@ const mapDispatchToProps = (dispatch) => ({
     updateRecognizingState: (isRecognizing) => {
         dispatch(updateRecognizingState(isRecognizing));
     },
-    updateQuery: (query) => {
-        dispatch(updateQuery(query));
+    getSearchResults: (query) => {
+        dispatch(getSearchResults(query));
     },
     updatePartialQuery: (partialQuery) => {
         dispatch(updatePartialQuery(partialQuery));
     },
     upgradeRequired: () => {
         dispatch(setUnableToRecord());
+    },
+    resetSearch: () => {
+        dispatch(resetSearch());
     },
 });
 
