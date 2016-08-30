@@ -33,6 +33,7 @@ var/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+npm-debug.log
 
 # Unit test / coverage reports
 htmlcov/
@@ -87,3 +88,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Node modules
+node_modules/
+
+# Flask app configuration file
+config.py
