@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Iqra App</title>
+
+  <!-- Behavioral Meta Data -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Core Meta Data -->
+  <meta name="author" content="Iqra, Inc.">
+  <meta name="description" content="Recite an ayah or a single word, and watch as Iqra uses voice recognition and custom algorithms to find the matches in the Quran!">
+  <meta name="keywords" content="iqra,quran,ayah,surah,muslim,islam,koran,holy,book,recite,read">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='favicons/apple-touch-icon-57x57.png') }}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='favicons/apple-touch-icon-60x60.png') }}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='favicons/apple-touch-icon-72x72.png') }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='favicons/apple-touch-icon-76x76.png') }}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='favicons/apple-touch-icon-114x114.png') }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='favicons/apple-touch-icon-120x120.png') }}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='favicons/apple-touch-icon-144x144.png') }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='favicons/apple-touch-icon-152x152.png') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon-180x180.png') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicons/favicon-32x32.png') }}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicons/favicon-194x194.png') }}" sizes="194x194">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicons/favicon-96x96.png') }}" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicons/android-chrome-192x192.png') }}" sizes="192x192">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicons/favicon-16x16.png') }}" sizes="16x16">
+  <link rel="manifest" href="{{ url_for('static', filename='favicons/manifest.json') }}">
+  <link rel="mask-icon" href="{{ url_for('static', filename='favicons/safari-pinned-tab.svg') }}" color="#059184">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="{{ url_for('static', filename='favicons/mstile-144x144.png') }}">
+  <meta name="theme-color" content="#059184">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/dist/styles.min.css') }}" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <h1 id="app-title">Iqra</h1>
+    <a id="play-link" href="https://play.google.com/store/apps/details?id=com.mmmoussa.iqra&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge-border.png" /></a>
+    <a href="#c1"><i class="material-icons more-arrow">keyboard_arrow_down</i></a>
+  </div>
+  <div id="content">
+    <a class="nav-link" name="c1"></a>
+    <div class="row">
+      <div class="col s12 m8 l9" id="details">
+        <h2 class="detail-title">Iqra</h2>
+        <p class="detail-subtitle">Recite an ayah or a single word, and watch as Iqra uses voice recognition and custom algorithms to find the matches in the Quran!</p>
+        <p class="detail-subtitle">Current Features:</p>
+        <ul>
+          <li>Recognizes recitation of full verses, partial verses, and even single words</li>
+          <li>Provides all matches for verses repeated in the Quran as well as a result count</li>
+          <li>Supports providing matches in Arabic as well as in an English translation or transliteration</li>
+          <li>Allows results to easily be shared</li>
+          <li>Available in English and Arabic</li>
+        </ul>
+        <p class="detail-subtitle">Contact:</p>
+        <p id="contact-message">This project is developed and maintained on a volunteer basis for the sake of the Ummah. If you'd like to provide feedback or learn how you can contribute, send an email to <a href="mailto:info@iqraapp.com">info@iqraapp.com</a>.</p>
+      </div>
+      <div class="col s12 m4 l3">
+        <img src="{{ url_for('static', filename='img/portrait_preview.png') }}" id="app-preview">
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  <script src="{{ url_for('static', filename='js/dist/main.min.js') }}"></script>
+</body>
+</html>

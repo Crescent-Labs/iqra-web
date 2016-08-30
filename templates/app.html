@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Iqra App</title>
+
+  <!-- CSRF Token -->
+  <meta name="csrftoken" content="{{ csrf_token() }}">
+
+  <!-- Behavioral Meta Data -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Core Meta Data -->
+  <meta name="author" content="Iqra, Inc.">
+  <meta name="description" content="Recite an ayah or a single word, and watch as Iqra uses voice recognition and custom algorithms to find the matches in the Quran!">
+  <meta name="keywords" content="iqra,quran,ayah,surah,muslim,islam,koran,holy,book,recite,read">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/static/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/static/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/static/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/static/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/static/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/static/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/static/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/static/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/static/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/static/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/static/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/static/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/static/favicons/manifest.json">
+  <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#059184">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/static/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#059184">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="static/css/dist/app.min.css" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/dist/bundle.css') }}"> -->
+  <link rel="stylesheet" href="http://127.0.0.1:8080/static/css/dist/bundle.css">
+
+  <!-- Prefetch mic images -->
+  <link rel="prefetch" href="/static/img/mic-slash.gif">
+  <link rel="prefetch" href="/static/img/mic-animate.gif">
+  <link rel="prefetch" href="/static/img/mic.gif">
+</head>
+<body>
+  <div id="content"></div>
+
+  <!-- Javascript -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+  <!-- <script src="{{ url_for('static', filename='js/dist/bundle.js') }}"></script> -->
+  <script src="http://127.0.0.1:8080/static/js/dist/bundle.js"></script>
+</body>
+</html>
