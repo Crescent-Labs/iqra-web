@@ -48,7 +48,7 @@ export default class Recording extends Component {
         // User starting recording
         recognition.start();
         // The code below is executed but immediately replaced if recognition starts successfully
-        this.refs.micImg.src = '/static/img/mic-slash.gif';
+        // TODO: Change mic appearance to show that it's disabled.
         this.props.updateRecordMessage('Click the "Allow" button above to enable your microphone.');
     }
 
