@@ -1,0 +1,120 @@
+# Linter Options
+options:
+  # Don't merge default rules
+  merge-default-rules: false
+# File Options
+files:
+  include: 'src/**/*.s+(a|c)ss'
+  ignore:
+    - 'node_modules/**/*.*'
+# Rule Configuration
+rules:
+  border-zero:
+    - 2
+    -
+      convention: 'none'
+  brace-style:
+    - 2
+    -
+      style: '1tbs'
+      allow-single-line: false
+  class-name-format:
+    - 2
+    -
+      convention: hyphenatedlowercase
+  extends-before-declarations:
+    - 2
+  extends-before-mixins:
+    - 2
+  function-name-format:
+    - 2
+    -
+      convention: hyphenatedlowercase
+  id-name-format:
+    - 2
+    -
+      convention: hyphenatedlowercase
+  indentation:
+    - 2
+    -
+      size: 4
+  mixin-name-format:
+    - 2
+    -
+      convention: hyphenatedlowercase
+  mixins-before-declarations:
+    - 2
+  nesting-depth:
+    - 1
+    -
+      max-depth: 4
+  no-css-comments:
+    - 2
+  no-duplicate-properties:
+    - 1
+  no-empty-rulesets:
+    - 2
+  no-important:
+    - 1
+  no-invalid-hex:
+    - 2
+  no-mergeable-selectors:
+    - 2
+  no-misspelled-properties:
+    - 2
+  no-trailing-whitespace:
+    - 2
+  no-trailing-zero:
+    - 2
+  no-url-protocols:
+    - 2
+  one-declaration-per-line:
+    - 2
+  pseudo-element:
+    - 2
+  quotes:
+    - 2
+    -
+      style: single
+  shorthand-values:
+    - 2
+  space-after-bang:
+    - 2
+    -
+      include: false
+  space-after-colon:
+    - 2
+    -
+      include: true
+  space-after-comma:
+    - 2
+    -
+      include: true
+  space-around-operator:
+    - 2
+    -
+      include: true
+  space-before-bang:
+    - 2
+    -
+      include: true
+  space-before-brace:
+    - 2
+    -
+      include: true
+  space-before-colon:
+    - 2
+    -
+      include: false
+  space-between-parens:
+    - 2
+    -
+      include: false
+  trailing-semicolon:
+    - 2
+    -
+      include: true
+  variable-name-format:
+    - 2
+    -
+      convention: hyphenatedlowercase

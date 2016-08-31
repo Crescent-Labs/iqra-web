@@ -1,8 +1,10 @@
 #!/usr/bin/env python
-from flask import Flask, jsonify, abort, request, render_template, redirect
+from flask import (
+    Flask, jsonify, abort, request, render_template, redirect,
+    send_from_directory
+)
 from flask_seasurf import SeaSurf
 from config import APIKEY
-import os
 import requests
 
 
@@ -22,8 +24,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/app', methods=['GET'])
-def webapp():
+@app.route('/app', defaults={'path': ''})
+@app.route('/app/<path:path>', methods=['GET'])
+def webapp(path):
     return render_template('app.html')
 
 

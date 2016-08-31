@@ -1,0 +1,34 @@
+@mixin absolute-center() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@mixin card-shadow($color) {
+    -webkit-box-shadow: 0px 4px 15px 0px $color;
+    -moz-box-shadow: 0px 4px 15px 0px $color;
+    box-shadow: 0px 4px 15px 0px $color;
+}
+
+@mixin transition-transform() {
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}
+
+@mixin transition-duration($duration) {
+    -webkit-transition-duration: $duration;
+    -moz-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    transition-duration: $duration;
+}
+
+@mixin transform-rotate($angle) {
+    -webkit-transform: rotate($angle);
+    -moz-transform: rotate($angle);
+    -o-transform: rotate($angle);
+}
