@@ -12,6 +12,7 @@ const mapStateToProps = (state) => ({
     query: state.query,
     partialQuery: state.partialQuery,
     results: state.results,
+    isLoading: state.isLoading,
 });
 
 const mapDispatchToProps = (dispatch) => ({

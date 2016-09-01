@@ -21,6 +21,7 @@ const mapStateToProps = (state) => {
         query: state.query,
         results: filteredResults,
         filter,
+        isLoading: state.isLoading,
     };
 };
 

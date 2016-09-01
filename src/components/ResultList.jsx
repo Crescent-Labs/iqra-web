@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import Result from './Result.jsx';
-
+import Loader from './Loader.jsx';
 
 export default class ResultList extends Component {
     constructor() {
@@ -53,6 +53,7 @@ export default class ResultList extends Component {
                 <div className="result-list">
                     {resultList}
                 </div>
+                {this.props.isLoading && <Loader />}
             </div>
         );
     }
@@ -62,6 +63,7 @@ ResultList.propTypes = {
     query: PropTypes.string.isRequired,
     results: PropTypes.array.isRequired,
     filter: PropTypes.string.isRequired,
+    isLoading: PropTypes.bool.isRequired,
     onFilter: PropTypes.func.isRequired,
     fetchOldResults: PropTypes.func.isRequired,
 };

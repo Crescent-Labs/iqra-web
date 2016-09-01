@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
+import Loader from './Loader.jsx';
 
 let recognition;
 let ignoreOnEnd;
@@ -203,6 +204,7 @@ export default class Recording extends Component {
                         to <a href="//www.google.com/chrome">Chrome</a> version 25 or later.
                     </p>
                 }
+                {this.props.isLoading && <Loader />}
             </div>
         );
     }
@@ -216,6 +218,7 @@ Recording.propTypes = {
     query: PropTypes.string.isRequired,
     partialQuery: PropTypes.string.isRequired,
     results: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
     startRecording: PropTypes.func.isRequired,
     updateRecordMessage: PropTypes.func.isRequired,
     updateRecognizingState: PropTypes.func.isRequired,
