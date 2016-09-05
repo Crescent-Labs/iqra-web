@@ -15,13 +15,15 @@ import mainReducer from './reducers/mainReducer';
 
 require('./stylesheets/main.scss');
 
-const loggerMiddleware = createLogger();
+const middlewares = [thunkMiddleware];
+if (process.env.NODE_ENV === 'development') {
+    const loggerMiddleware = createLogger();
+    middlewares.push(loggerMiddleware);
+}
+
 const store = createStore(
     mainReducer,
-    applyMiddleware(
-        thunkMiddleware, // lets us dispatch() functions
-        loggerMiddleware // neat middleware that logs actions
-    )
+    applyMiddleware(...middlewares)
 );
 
 render((
