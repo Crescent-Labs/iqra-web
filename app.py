@@ -6,6 +6,7 @@ from flask import (
 from flask_seasurf import SeaSurf
 from config import APIKEY
 import requests
+import json
 
 
 app = Flask(__name__, static_folder="./static", template_folder="./templates")
@@ -27,7 +28,15 @@ def index():
 @app.route('/app', defaults={'path': ''})
 @app.route('/app/<path:path>', methods=['GET'])
 def webapp(path):
-    return render_template('app.html')
+    if app.debug:
+        jsSource = "http://127.0.0.1:8080/static/js/bundle.js"
+        cssSource = "http://127.0.0.1:8080/static/css/bundle.css"
+    else:
+        with open("webpack-assets.json", "r") as assetsFile:
+            assetsJson = json.load(assetsFile)
+        jsSource = assetsJson["main"]["js"]
+        cssSource = assetsJson["main"]["css"]
+    return render_template('app.html', jsSource=jsSource, cssSource=cssSource)
 
 
 @app.route('/download', methods=['GET'])

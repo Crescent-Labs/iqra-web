@@ -5,6 +5,7 @@
   "author": "Crescent Labs",
   "homepage": "https://iqraapp.com/",
   "devDependencies": {
+    "assets-webpack-plugin": "^3.4.0",
     "babel-core": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
@@ -43,8 +44,9 @@
     "redux-thunk": "^2.1.0"
   },
   "scripts": {
-    "build": "webpack -p",
-    "dev": "webpack-dev-server --inline --progress --colors --history-api-fallback",
+    "build-dev": "webpack --progress",
+    "build-prod": "webpack -p --progress --release",
+    "dev": "webpack-dev-server --inline --progress --colors --history-api-fallback --hot --develop",
     "lint": "npm run eslint && npm run sasslint",
     "eslint": "eslint --ext .js --ext .jsx src || true",
     "sasslint": "sass-lint --verbose --no-exit || true",

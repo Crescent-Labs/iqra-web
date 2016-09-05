@@ -97,3 +97,10 @@ node_modules/
 
 # Flask app configuration file
 config.py
+
+# Built project files
+bundle*.js
+bundle*.js.map
+bundle*.css
+bundle*.css.map
+webpack-assets.json
