@@ -22,6 +22,8 @@ rules:
     - 2
     -
       convention: hyphenatedlowercase
+      ignore:
+        - ReactModal__Body--open
   extends-before-declarations:
     - 2
   extends-before-mixins:

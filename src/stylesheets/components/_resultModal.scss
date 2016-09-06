@@ -2,13 +2,14 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 60%;
+    max-width: 800px;
+    width: 96%;
     transform: translate(-50%, -50%);
     border: 3px solid #585858;
     border-radius: 10px;
     overflow: auto;
     outline: none;
-    padding: 40px;
+    padding: 30px;
     background-color: White;
 
     .metadata-container {
@@ -38,7 +39,7 @@
     }
 
     .ayah-block {
-        max-height: 60vh;
+        max-height: calc(65vh - 80px);
         overflow: auto;
         margin-top: 20px;
 
@@ -50,7 +51,7 @@
 
         .translated-ayah {
             color: Gray;
-            font-size: 18px;
+            font-size: 17px;
             padding-top: 10px;
         }
     }
@@ -62,5 +63,9 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ReactModal__Body--open {
+    overflow: hidden;
 }
