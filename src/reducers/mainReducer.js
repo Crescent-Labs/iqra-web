@@ -2,7 +2,7 @@ import { START_RECORDING, UPDATE_RECORD_MESSAGE, UPDATE_RECOGNIZING_STATE,
     SET_UNABLE_TO_RECORD, GET_SEARCH_RESULTS_REQUEST, GET_SEARCH_RESULTS_SUCCESS,
     GET_SEARCH_RESULTS_FAILURE, UPDATE_PARTIAL_QUERY, RESET_SEARCH }
     from '../actions/recording';
-import { UPDATE_RESULTS_FILTER } from '../actions/results';
+import { UPDATE_RESULTS_FILTER, OPEN_RESULT_MODAL, CLOSE_RESULT_MODAL } from '../actions/results';
 
 const initialState = {
     canRecord: true,
@@ -14,6 +14,8 @@ const initialState = {
     results: [],
     isLoading: false,
     resultFilter: '',
+    showModal: false,
+    resultObject: {},
 };
 
 export default function mainReducer(state = initialState, action) {
@@ -52,6 +54,13 @@ export default function mainReducer(state = initialState, action) {
         return Object.assign({}, initialState, { canRecord: state.canRecord });
     case UPDATE_RESULTS_FILTER:
         return Object.assign({}, state, { resultFilter: action.filter });
+    case OPEN_RESULT_MODAL:
+        return Object.assign({}, state, {
+            showModal: true,
+            resultObject: action.resultObject,
+        });
+    case CLOSE_RESULT_MODAL:
+        return Object.assign({}, state, { showModal: false });
     default:
         return state;
     }

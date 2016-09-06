@@ -54,7 +54,7 @@ export default class Recording extends Component {
     }
 
     onRecognitionError() {
-
+        // TODO:
     }
 
     onRecognitionEnd() {

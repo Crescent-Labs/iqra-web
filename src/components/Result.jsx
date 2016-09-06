@@ -2,12 +2,41 @@ import React, { Component, PropTypes } from 'react';
 
 
 export default class Result extends Component {
+    constructor() {
+        super();
+        this.openResultModal = this.openResultModal.bind(this);
+    }
+
+    openResultModal() {
+        const {
+            surahNum,
+            ayahNum,
+            arabicSurahName,
+            translationSurahName,
+            arabicAyah,
+            translationAyah,
+        } = this.props;
+        const resultObject = {
+            surahNum,
+            ayahNum,
+            arabicSurahName,
+            translationSurahName,
+            arabicAyah,
+            translationAyah,
+        };
+        this.props.openResultModal(resultObject);
+    }
+
     render() {
-        const { surahNum, ayahNum, arabicSurahName, translationSurahName } = this.props;
-        // arabicAyah and translationAyah also available from props
+        const {
+            surahNum,
+            ayahNum,
+            arabicSurahName,
+            translationSurahName,
+        } = this.props;
 
         return (
-            <div className="result-box">
+            <div className="result-box" onClick={this.openResultModal}>
                 <div className="surah-name">
                     <p>{arabicSurahName}</p>
                     <p>{translationSurahName}</p>
@@ -25,4 +54,5 @@ Result.propTypes = {
     translationSurahName: PropTypes.string.isRequired,
     arabicAyah: PropTypes.string.isRequired,
     translationAyah: PropTypes.string.isRequired,
+    openResultModal: PropTypes.func.isRequired,
 };
