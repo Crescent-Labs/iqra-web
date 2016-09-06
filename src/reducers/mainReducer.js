@@ -14,7 +14,7 @@ const initialState = {
     results: [],
     isLoading: false,
     resultFilter: '',
-    showModal: false,
+    isModalShown: false,
     resultObject: {},
 };
 
@@ -56,11 +56,11 @@ export default function mainReducer(state = initialState, action) {
         return Object.assign({}, state, { resultFilter: action.filter });
     case OPEN_RESULT_MODAL:
         return Object.assign({}, state, {
-            showModal: true,
+            isModalShown: true,
             resultObject: action.resultObject,
         });
     case CLOSE_RESULT_MODAL:
-        return Object.assign({}, state, { showModal: false });
+        return Object.assign({}, state, { isModalShown: false });
     default:
         return state;
     }

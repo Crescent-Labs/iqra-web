@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Result from '../components/Result.jsx';
-import { openResultModal, closeResultModal } from '../actions/results';
+import { openResultModal } from '../actions/results';
 
 
 const mapStateToProps = () => ({});
@@ -8,9 +8,6 @@ const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch) => ({
     openResultModal: (resultObject) => {
         dispatch(openResultModal(resultObject));
-    },
-    closeResultModal: () => {
-        dispatch(closeResultModal());
     },
 });
 

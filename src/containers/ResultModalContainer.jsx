@@ -4,7 +4,7 @@ import { closeResultModal } from '../actions/results';
 
 
 const mapStateToProps = (state) => ({
-    showModal: state.showModal,
+    isModalShown: state.isModalShown,
     resultObject: state.resultObject,
 });
 

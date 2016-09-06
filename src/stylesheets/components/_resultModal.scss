@@ -3,14 +3,13 @@
     top: 50%;
     left: 50%;
     width: 60%;
-    // max-height: 85vh;
     transform: translate(-50%, -50%);
     border: 3px solid #585858;
     border-radius: 10px;
     overflow: auto;
     outline: none;
     padding: 40px;
-    background-color: rgb(255, 255, 255);
+    background-color: White;
 
     .metadata-container {
         border-bottom: 3px solid $colour-primary;
@@ -34,7 +33,7 @@
 
         .arabic-surah-name {
             color: LightGray;
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 
@@ -45,7 +44,7 @@
 
         .arabic-ayah {
             color: Gray;
-            font-size: 18px;
+            font-size: 20px;
             text-align: right;
         }
 
