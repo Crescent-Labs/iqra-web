@@ -1,0 +1,71 @@
+.result-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 800px;
+    width: 96%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #585858;
+    border-radius: 10px;
+    overflow: auto;
+    outline: none;
+    padding: 30px;
+    background-color: White;
+
+    .metadata-container {
+        border-bottom: 3px solid $colour-primary;
+        padding-bottom: 10px;
+
+        .surah-header {
+            display: flex;
+
+            .surah-name {
+                flex-grow: 1;
+                font-size: 20px;
+            }
+
+            .surah-ayah-number {
+                color: LightGray;
+                flex-grow: 1;
+                font-size: 18px;
+                text-align: right;
+            }
+        }
+
+        .arabic-surah-name {
+            color: LightGray;
+            font-size: 20px;
+        }
+    }
+
+    .ayah-block {
+        max-height: calc(65vh - 80px);
+        overflow: auto;
+        margin-top: 20px;
+
+        .arabic-ayah {
+            color: Gray;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        .translated-ayah {
+            color: Gray;
+            font-size: 17px;
+            padding-top: 10px;
+        }
+    }
+}
+
+.result-modal-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ReactModal__Body--open {
+    overflow: hidden;
+}

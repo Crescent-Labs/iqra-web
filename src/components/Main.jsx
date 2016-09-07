@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header.jsx';
+import ResultModalContainer from '../containers/ResultModalContainer.jsx';
 
 export default class Main extends Component {
     render() {
@@ -7,6 +8,7 @@ export default class Main extends Component {
             <div>
                 <Header />
                 {this.props.children}
+                <ResultModalContainer />
             </div>
         );
     }

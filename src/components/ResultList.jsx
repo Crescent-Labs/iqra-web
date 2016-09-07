@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
-import Result from './Result.jsx';
 import Loader from './Loader.jsx';
+import ResultContainer from '../containers/ResultContainer.jsx';
+
 
 export default class ResultList extends Component {
     constructor() {
@@ -26,7 +27,7 @@ export default class ResultList extends Component {
 
     render() {
         const resultList = this.props.results.map(result => (
-            <Result
+            <ResultContainer
                 key={`${result.surahNum}-${result.ayahNum}`}
                 surahNum={result.surahNum}
                 ayahNum={result.ayahNum}
@@ -45,7 +46,7 @@ export default class ResultList extends Component {
                 <p className="result-query">{this.props.query}</p>
                 <p className="result-count">{resultCount} {resultCountText}</p>
                 <input
-                    placeholder="filter results"
+                    placeholder="Filter Results"
                     className="result-filter"
                     onChange={this.onFilter}
                     value={this.props.filter}
