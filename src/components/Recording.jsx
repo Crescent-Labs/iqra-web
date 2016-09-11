@@ -54,7 +54,7 @@ export default class Recording extends Component {
     }
 
     onRecognitionError() {
-        // TODO:
+        // TODO: implement error handling.
     }
 
     onRecognitionEnd() {
@@ -83,10 +83,6 @@ export default class Recording extends Component {
         console.log('Interim', interimTranscript);
     }
 
-    onRecordMessageNeedsChange(message) {
-        this.props.updateRecordMessage(message);
-    }
-
     upgradeRequired() {
         this.props.upgradeRequired();
     }
@@ -106,26 +102,32 @@ export default class Recording extends Component {
         };
 
         recognition.onerror = (event) => {
+            const errorLink = '//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892';
+            const chromeLink = 'chrome://settings/contentExceptions#media-stream-mic';
             if (event.error === 'no-speech') {
                 context.refs.micImg.src = '/static/img/mic.svg';
                 context.props.updateRecordMessage(
-                    'No speech was detected. You may need to adjust your' +
-                    '<a href="//support.google.com/chrome/bin/answer.py' +
-                    '?hl=en&amp;answer=1407892">microphone settings</a>.'
+                    <p>
+                        No speech was detected. You may need to adjust your
+                        <a target="_blank" href={errorLink}> microphone settings</a>.
+                    </p>
                 );
             } else if (event.error === 'audio-capture') {
                 context.refs.micImg.src = '/static/img/mic.svg';
                 context.props.updateRecordMessage(
-                    'No microphone was found. Ensure that a microphone is installed and that ' +
-                    '<a href="//support.google.com/chrome/bin/answer.py?' +
-                    'hl=en&amp;answer=1407892">microphone settings</a> are configured correctly.'
+                    <p>
+                        No microphone was found. Ensure that a microphone is installed and that your
+                        <a target="_blank" href={errorLink}> microphone settings </a>
+                        are configured correctly.
+                    </p>
                 );
             } else if (event.error === 'not-allowed') {
-                if (event.timeStamp - context.props.startRecognitionTime < 100) {
-                    context.props.updateRecordMessage('Permission to use microphone is blocked. To change, go to chrome://settings/contentExceptions#media-stream');
-                } else {
-                    context.props.updateRecordMessage('Permission to use microphone was denied.');
-                }
+                context.props.updateRecordMessage(
+                    <p>
+                        Permission to use microphone is blocked. To fix, please
+                        <a target="_blank" href={chromeLink}> change your settings here</a>.
+                    </p>
+                );
             }
             ignoreOnEnd = true;
         };
