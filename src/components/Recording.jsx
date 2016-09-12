@@ -102,8 +102,8 @@ export default class Recording extends Component {
         };
 
         recognition.onerror = (event) => {
-            const errorLink = '//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892';
-            const chromeLink = 'chrome://settings/contentExceptions#media-stream-mic';
+            const errorLink = '//support.google.com/websearch/answer/2940021';
+            const chromeLink = '//support.google.com/chrome/answer/2693767';
             if (event.error === 'no-speech') {
                 context.refs.micImg.src = '/static/img/mic.svg';
                 context.props.updateRecordMessage(
