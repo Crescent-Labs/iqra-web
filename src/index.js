@@ -9,6 +9,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import Main from './components/Main.jsx';
+import NotFound from './components/NotFound.jsx';
 import RecordingContainer from './containers/RecordingContainer.jsx';
 import ResultListContainer from './containers/ResultListContainer.jsx';
 import mainReducer from './reducers/mainReducer';
@@ -34,6 +35,7 @@ render((
                 <Route path="/app/search" component={RecordingContainer} />
                 <Route path="/app/results" component={ResultListContainer} />
             </Route>
+            <Route path="*" component={NotFound} />
         </Router>
     </Provider>
 ), document.getElementById('content'));
