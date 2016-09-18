@@ -2,7 +2,8 @@ import { START_RECORDING, UPDATE_RECORD_MESSAGE, UPDATE_RECOGNIZING_STATE,
     SET_UNABLE_TO_RECORD, GET_SEARCH_RESULTS_REQUEST, GET_SEARCH_RESULTS_SUCCESS,
     GET_SEARCH_RESULTS_FAILURE, UPDATE_PARTIAL_QUERY, RESET_SEARCH }
     from '../actions/recording';
-import { UPDATE_RESULTS_FILTER, OPEN_RESULT_MODAL, CLOSE_RESULT_MODAL } from '../actions/results';
+import { UPDATE_RESULTS_FILTER, UPDATE_RESULTS_PAGE_NUM, OPEN_RESULT_MODAL, CLOSE_RESULT_MODAL }
+    from '../actions/results';
 
 const initialState = {
     canRecord: true,
@@ -11,9 +12,10 @@ const initialState = {
     startRecognitionTime: -1,
     partialQuery: '',
     query: '',
-    results: [],
     isLoading: false,
+    results: [],
     resultFilter: '',
+    resultPageNum: 1,
     isModalShown: false,
     resultObject: {},
 };
@@ -53,7 +55,12 @@ export default function mainReducer(state = initialState, action) {
     case RESET_SEARCH:
         return Object.assign({}, initialState, { canRecord: state.canRecord });
     case UPDATE_RESULTS_FILTER:
-        return Object.assign({}, state, { resultFilter: action.filter });
+        return Object.assign({}, state, {
+            resultFilter: action.filter,
+            resultPageNum: 1,
+        });
+    case UPDATE_RESULTS_PAGE_NUM:
+        return Object.assign({}, state, { resultPageNum: action.pageNum });
     case OPEN_RESULT_MODAL:
         return Object.assign({}, state, {
             isModalShown: true,

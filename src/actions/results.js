@@ -6,6 +6,14 @@ export function updateResultsFilter(filter) {
     };
 }
 
+export const UPDATE_RESULTS_PAGE_NUM = 'UPDATE_RESULTS_PAGE_NUM';
+export function updateResultsPageNum(pageNum) {
+    return {
+        type: UPDATE_RESULTS_PAGE_NUM,
+        pageNum,
+    };
+}
+
 export const OPEN_RESULT_MODAL = 'OPEN_RESULT_MODAL';
 export function openResultModal(resultObject) {
     return {

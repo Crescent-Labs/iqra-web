@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
+import ReactPaginate from 'react-paginate';
 import Loader from './Loader.jsx';
 import ResultContainer from '../containers/ResultContainer.jsx';
 
@@ -8,6 +9,7 @@ export default class ResultList extends Component {
     constructor() {
         super();
         this.onFilter = this.onFilter.bind(this);
+        this.handlePageClick = this.handlePageClick.bind(this);
     }
 
     componentDidMount() {
@@ -25,6 +27,10 @@ export default class ResultList extends Component {
         this.props.onFilter(event.target.value);
     }
 
+    handlePageClick(data) {
+        this.props.updatePageNumber(data.selected + 1);
+    }
+
     render() {
         const resultList = this.props.results.map(result => (
             <ResultContainer
@@ -38,7 +44,7 @@ export default class ResultList extends Component {
             />
         ));
 
-        const resultCount = this.props.results.length;
+        const resultCount = this.props.numOfResults;
         const resultCountText = resultCount === 1 ? 'result' : 'results';
 
         return (
@@ -54,6 +60,23 @@ export default class ResultList extends Component {
                 <div className="result-list">
                     {resultList}
                 </div>
+                {this.props.showPagination &&
+                    <ReactPaginate
+                        previousLabel="previous"
+                        nextLabel="next"
+                        breakLabel="..."
+                        breakClassName="pagination-break"
+                        pageNum={this.props.numOfPages}
+                        marginPagesDisplayed={1}
+                        pageRangeDisplayed={5}
+                        initialSelected={this.props.pageNum - 1}
+                        forceSelected={this.props.pageNum - 1}
+                        clickCallback={this.handlePageClick}
+                        containerClassName="pagination"
+                        pageClassName="pagination-number"
+                        activeClassName="active"
+                    />
+                }
                 {this.props.isLoading && <Loader />}
             </div>
         );
@@ -65,6 +88,11 @@ ResultList.propTypes = {
     results: PropTypes.array.isRequired,
     filter: PropTypes.string.isRequired,
     isLoading: PropTypes.bool.isRequired,
+    numOfResults: PropTypes.number.isRequired,
+    showPagination: PropTypes.bool.isRequired,
+    numOfPages: PropTypes.number.isRequired,
+    pageNum: PropTypes.number.isRequired,
     onFilter: PropTypes.func.isRequired,
     fetchOldResults: PropTypes.func.isRequired,
+    updatePageNumber: PropTypes.func.isRequired,
 };
