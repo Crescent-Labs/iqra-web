@@ -34,4 +34,25 @@
     .result-list {
         text-align: center;
     }
+
+    .pagination {
+        text-align: center;
+        margin-bottom: 30px;
+
+        .pagination-number, .next:not(.disabled), .previous:not(.disabled) {
+            cursor: pointer;
+
+            &.active {
+                background-color: $colour-primary;
+            }
+
+            &:hover {
+                background-color: $colour-primary-light;
+
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
 }
