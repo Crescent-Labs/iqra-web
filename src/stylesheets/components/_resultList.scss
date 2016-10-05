@@ -18,7 +18,7 @@
 
     .result-filter {
         width: 60%;
-        height: 28px;
+        height: 30px;
         text-align: center;
         border: 1px solid grey;
         border-radius: 6px;
@@ -28,6 +28,21 @@
 
         &:focus {
             outline: none;
+            border: 2px solid $colour-primary-light;
+        }
+    }
+
+    .translation-select {
+        width: 60%;
+        text-align: center;
+        margin: 20px auto;
+        border: 1px solid grey;
+        border-radius: 6px;
+        height: 30px;
+
+        &:focus {
+            outline: none;
+            border: 2px solid $colour-primary-light;
         }
     }
 

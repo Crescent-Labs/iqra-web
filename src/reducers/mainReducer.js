@@ -2,8 +2,9 @@ import { START_RECORDING, UPDATE_RECORD_MESSAGE, UPDATE_RECOGNIZING_STATE,
     SET_UNABLE_TO_RECORD, GET_SEARCH_RESULTS_REQUEST, GET_SEARCH_RESULTS_SUCCESS,
     GET_SEARCH_RESULTS_FAILURE, UPDATE_PARTIAL_QUERY, RESET_SEARCH }
     from '../actions/recording';
-import { UPDATE_RESULTS_FILTER, UPDATE_RESULTS_PAGE_NUM, OPEN_RESULT_MODAL, CLOSE_RESULT_MODAL }
-    from '../actions/results';
+import { UPDATE_RESULTS_FILTER, UPDATE_RESULTS_PAGE_NUM, UPDATE_TRANSLATION_RESULTS_REQUEST,
+    UPDATE_TRANSLATION_RESULTS_SUCCESS, UPDATE_TRANSLATION_RESULTS_FAILURE, OPEN_RESULT_MODAL,
+    CLOSE_RESULT_MODAL } from '../actions/results';
 
 const initialState = {
     canRecord: true,
@@ -61,6 +62,21 @@ export default function mainReducer(state = initialState, action) {
         });
     case UPDATE_RESULTS_PAGE_NUM:
         return Object.assign({}, state, { resultPageNum: action.pageNum });
+    case UPDATE_TRANSLATION_RESULTS_REQUEST:
+        return Object.assign({}, state, { isLoading: true });
+    case UPDATE_TRANSLATION_RESULTS_SUCCESS: {
+        const newResults = Object.assign(state.results);
+        newResults.forEach((result, index) => {
+            const resultCopy = result;
+            resultCopy.translationAyah = action.ayahs[index].translationAyah;
+        });
+        return Object.assign({}, state, {
+            isLoading: false,
+            results: newResults,
+        });
+    }
+    case UPDATE_TRANSLATION_RESULTS_FAILURE:
+        return Object.assign({}, state, { isLoading: false });
     case OPEN_RESULT_MODAL:
         return Object.assign({}, state, {
             isModalShown: true,

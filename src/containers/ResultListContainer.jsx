@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ResultList from '../components/ResultList.jsx';
-import { updateResultsFilter, updateResultsPageNum } from '../actions/results';
+import { updateResultsFilter, updateResultsPageNum, updateTranslationResults }
+    from '../actions/results';
 import { getSearchResults } from '../actions/recording';
 import _ from 'lodash';
 
@@ -40,6 +41,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     updatePageNumber: (pageNum) => {
         dispatch(updateResultsPageNum(pageNum));
+    },
+    changeTranslation: (translation) => {
+        dispatch(updateTranslationResults(translation));
     },
 });
 

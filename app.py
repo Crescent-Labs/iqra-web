@@ -57,6 +57,16 @@ def getSearchResult():
     return jsonify(res.json())
 
 
+@app.route('/translations', methods=['POST'])
+def updateTranslations():
+    if not request.json:
+        abort(400)
+    reqJSON = request.json
+    reqJSON['apikey'] = APIKEY
+    res = requests.post(API_ROUTE + '/api/v3.0/translations', json=reqJSON)
+    return jsonify(res.json())
+
+
 @app.errorhandler(400)
 def badRequest(error):
     return render_template('error.html')
