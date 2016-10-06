@@ -1,19 +1,5 @@
 import fetch from 'isomorphic-fetch';
-
-function getCookie(cname) {
-    const name = `${cname}=`;
-    const cookieArray = document.cookie.split(';');
-    for (let i = 0; i < cookieArray.length; i++) {
-        let cookie = cookieArray[i];
-        while (cookie.charAt(0) === ' ') {
-            cookie = cookie.substring(1);
-        }
-        if (cookie.indexOf(name) === 0) {
-            return cookie.substring(name.length, cookie.length);
-        }
-    }
-    return '';
-}
+import { getCookie } from '../utils/Network';
 
 export const START_RECORDING = 'START_RECORDING';
 export function startRecording() {
@@ -75,8 +61,11 @@ export function getSearchResults(query) {
     return dispatch => {
         dispatch(getSearchResultsRequest(query));
 
+        const translation = localStorage.getItem('translation') || 'en-hilali';
+
         const body = JSON.stringify({
             arabicText: query,
+            translation,
             _csrf_token: getCookie('_csrf_token'),
         });
         const options = {

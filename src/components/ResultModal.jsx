@@ -23,7 +23,10 @@ export default class ResultModal extends Component {
                 </div>
                 <div className="ayah-block">
                     <div className="arabic-ayah">{resultObject.arabicAyah}</div>
-                    <div className="translated-ayah">{resultObject.translationAyah}</div>
+                    <div
+                        className="translated-ayah"
+                        dangerouslySetInnerHTML={{ __html: resultObject.translationAyah }}
+                    />
                 </div>
             </Modal>
         );
