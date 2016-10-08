@@ -15,19 +15,7 @@ csrf = SeaSurf(app)
 API_ROUTE = 'https://api.iqraapp.com'
 
 
-@app.route('/static/<path:path>')
-def sendStatic(path):
-    return send_from_directory('static', path)
-
-
-@app.route('/', methods=['GET'])
-def index():
-    return render_template('index.html')
-
-
-@app.route('/app', defaults={'path': ''})
-@app.route('/app/<path:path>', methods=['GET'])
-def webapp(path):
+def getAssetSource():
     if app.debug:
         jsSource = "http://127.0.0.1:8080/static/js/bundle.js"
         cssSource = "http://127.0.0.1:8080/static/css/bundle.css"
@@ -36,6 +24,24 @@ def webapp(path):
             assetsJson = json.load(assetsFile)
         jsSource = assetsJson["main"]["js"]
         cssSource = assetsJson["main"]["css"]
+    return jsSource, cssSource
+
+
+@app.route('/static/<path:path>')
+def sendStatic(path):
+    return send_from_directory('static', path)
+
+
+@app.route('/', methods=['GET'])
+def index():
+    jsSource, cssSource = getAssetSource()
+    return render_template('index.html', jsSource=jsSource, cssSource=cssSource)
+
+
+@app.route('/app', defaults={'path': ''})
+@app.route('/app/<path:path>', methods=['GET'])
+def webapp(path):
+    jsSource, cssSource = getAssetSource()
     return render_template('app.html', jsSource=jsSource, cssSource=cssSource)
 
 
