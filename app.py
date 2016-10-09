@@ -35,7 +35,9 @@ def sendStatic(path):
 @app.route('/', methods=['GET'])
 def index():
     jsSource, cssSource = getAssetSource()
-    return render_template('index.html', jsSource=jsSource, cssSource=cssSource)
+    return render_template(
+        'index.html', jsSource=jsSource, cssSource=cssSource
+    )
 
 
 @app.route('/app', defaults={'path': ''})
@@ -75,12 +77,14 @@ def updateTranslations():
 
 @app.errorhandler(400)
 def badRequest(error):
-    return render_template('error.html')
+    jsSource, cssSource = getAssetSource()
+    return render_template('error.html', cssSource=cssSource)
 
 
 @app.errorhandler(404)
 def notFound(error):
-    return render_template('error.html')
+    jsSource, cssSource = getAssetSource()
+    return render_template('error.html', cssSource=cssSource)
 
 
 if __name__ == '__main__':
