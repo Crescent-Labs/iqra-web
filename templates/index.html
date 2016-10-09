@@ -37,15 +37,17 @@
   <!-- Styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ cssSource }}">
 </head>
 <body id="home-page">
   <div id="container">
     <h1 id="app-title">Iqra</h1>
     <a id="play-link" href="https://play.google.com/store/apps/details?id=com.mmmoussa.iqra&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge-border.png" /></a>
     <a href="#c1"><i class="material-icons more-arrow">keyboard_arrow_down</i></a>
+    <a id="try-webapp-button" href="/app">Try it now!</a>
   </div>
-  <div id="content">
+  <div id="home-content">
     <a class="nav-link" name="c1"></a>
     <div class="row">
       <div class="col s12 m8 l9" id="details">
@@ -56,7 +58,8 @@
           <li>Recognizes recitation of full verses, partial verses, and even single words</li>
           <li>Provides all matches for verses repeated in the Quran as well as a result count</li>
           <li>Supports providing matches in Arabic as well as in an English translation or transliteration</li>
-          <li>Allows results to easily be shared</li>
+          <li>Mobile app allows results to easily be shared</li>
+          <li>Web app allows results to be filtered</li>
           <li>Available in English and Arabic</li>
         </ul>
         <p class="detail-subtitle">Contact:</p>
@@ -71,6 +74,7 @@
   <!-- Javascript -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
