@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import ReactPaginate from 'react-paginate';
 import Loader from './Loader.jsx';
 import ResultContainer from '../containers/ResultContainer.jsx';
@@ -106,6 +106,7 @@ export default class ResultList extends Component {
                         activeClassName="active"
                     />
                 }
+                <Link to="/app/search" className="new-search-bottom">New search</Link>
                 {this.props.isLoading && <Loader />}
             </div>
         );
