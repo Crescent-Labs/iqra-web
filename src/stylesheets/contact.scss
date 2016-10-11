@@ -1,0 +1,27 @@
+.contact-message {
+    max-width: 700px;
+    width: 90%;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 16px;
+}
+
+.contact-form {
+    max-width: 700px;
+    width: 90%;
+    margin: 0px auto;
+    padding: 0px 0px 20px;
+
+    .gotcha {
+        display: none;
+    }
+
+    .contact-submit {
+        width: 100%;
+    }
+}
+
+.contact-thanks {
+    text-align: center;
+    margin-top: 30px;
+}

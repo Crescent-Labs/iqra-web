@@ -1,0 +1,28 @@
+.contributors {
+    width: 90%;
+    margin: 0px auto;
+    padding: 20px 0px;
+
+    .contrib-description {
+        font-size: 16px;
+    }
+
+    h5 {
+        margin-top: 30px;
+        font-size: 22px;
+    }
+
+    ul {
+        margin-top: 6px;
+
+        li {
+            list-style: disc;
+            margin-left: 40px;
+        }
+    }
+
+    .get-involved {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+}

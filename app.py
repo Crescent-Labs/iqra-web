@@ -47,6 +47,24 @@ def webapp(path):
     return render_template('app.html', jsSource=jsSource, cssSource=cssSource)
 
 
+@app.route('/contact', methods=['GET'])
+def contact():
+    jsSource, cssSource = getAssetSource()
+    return render_template('app.html', jsSource=jsSource, cssSource=cssSource)
+
+
+@app.route('/contributors', methods=['GET'])
+def contributors():
+    jsSource, cssSource = getAssetSource()
+    return render_template('app.html', jsSource=jsSource, cssSource=cssSource)
+
+
+@app.route('/thanks', methods=['GET'])
+def thanks():
+    jsSource, cssSource = getAssetSource()
+    return render_template('app.html', jsSource=jsSource, cssSource=cssSource)
+
+
 @app.route('/download', methods=['GET'])
 def download():
     return redirect(
