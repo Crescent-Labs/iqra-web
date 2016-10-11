@@ -91,7 +91,6 @@ export function updateTranslationResults(translation) {
                 throw error;
             })
             .then(json => {
-                console.log(json.result);
                 dispatch(updateTranslationResultsSuccess(json));
             })
             .catch(error => {

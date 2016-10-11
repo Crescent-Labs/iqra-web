@@ -88,7 +88,6 @@ export function getSearchResults(query) {
                 throw error;
             })
             .then(json => {
-                console.log(json.result);
                 dispatch(getSearchResultsSuccess(json));
             })
             .catch(error => {

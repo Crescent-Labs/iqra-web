@@ -35,9 +35,7 @@ def sendStatic(path):
 @app.route('/', methods=['GET'])
 def index():
     jsSource, cssSource = getAssetSource()
-    return render_template(
-        'index.html', jsSource=jsSource, cssSource=cssSource
-    )
+    return render_template('index.html', cssSource=cssSource)
 
 
 @app.route('/app', defaults={'path': ''})

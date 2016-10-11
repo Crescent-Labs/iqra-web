@@ -35,8 +35,12 @@ export default class Recording extends Component {
     }
 
     componentWillUnmount() {
-        recognition.stop();
-        audioContext.close();
+        if (recognition) {
+            recognition.stop();
+        }
+        if (audioContext) {
+            audioContext.close();
+        }
     }
 
     onRecognitionStart() {
@@ -79,8 +83,6 @@ export default class Recording extends Component {
             }
         }
         this.props.updatePartialQuery(interimTranscript);
-        console.log('Final', this.props.query);
-        console.log('Interim', interimTranscript);
     }
 
     upgradeRequired() {
