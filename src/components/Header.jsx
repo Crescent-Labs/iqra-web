@@ -19,10 +19,14 @@ export default class Header extends Component {
                     <ul className="right desktop-nav hide-on-med-and-down">
                         <li><a href="/">Home</a></li>
                         <li><Link to="/app/search">Search</Link></li>
+                        <li><Link to="/contributors">Contributors</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                     <ul className="side-nav" id="mobile">
                         <li><a href="/">Home</a></li>
                         <li><Link to="/app">Search</Link></li>
+                        <li><Link to="/contributors">Contributors</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                     <a href="#" data-activates="mobile" className="button-collapse">
                         <i className="material-icons">menu</i>
