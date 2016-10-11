@@ -1,4 +1,7 @@
 {
+	"env": {
+		"jquery": true
+	},
 	"extends": "airbnb",
 	"globals": {
 		"webkitSpeechRecognition": false

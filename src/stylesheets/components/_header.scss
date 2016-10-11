@@ -6,7 +6,7 @@
     .logo-container {
         width: $header-height;
         height: $header-height;
-        display: block;
+        display: inline-block;
 
         &:hover {
             background-color: $colour-primary-dark;
@@ -25,5 +25,20 @@
             padding: 15px;
             overflow: hidden;
         }
+    }
+
+    .button-collapse {
+        float: right;
+        line-height: $header-height;
+        margin-right: 14px;
+
+        i {
+            line-height: $header-height;
+            font-size: 34px;
+        }
+    }
+
+    .desktop-nav {
+        line-height: $header-height;
     }
 }
