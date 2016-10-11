@@ -2,7 +2,6 @@
     width: 100%;
     height: $header-height;
     background-color: $colour-primary;
-    position: relative;
 
     .logo-container {
         width: $header-height;
@@ -28,44 +27,18 @@
         }
     }
 
-    .desktop-nav {
+    .button-collapse {
         float: right;
         line-height: $header-height;
+        margin-right: 14px;
+
+        i {
+            line-height: $header-height;
+            font-size: 34px;
+        }
     }
 
-    .dropdown {
-        float: right;
-        height: $header-height;
+    .desktop-nav {
         line-height: $header-height;
-        padding-right: 12px;
-
-        &:hover .mobile-nav {
-            display: block;
-        }
-
-        .mobile-nav {
-            display: none;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            position: fixed;
-            right: 0;
-            top: 0;
-            margin: 0;
-            margin-top: $header-height;
-            z-index: 100;
-
-            li {
-                float: none;
-                padding: 0 15px;
-            }
-
-            a {
-                color: #444;
-                display: block;
-                font-size: 1rem;
-                height: $header-height;
-                line-height: $header-height;
-                padding: 0 15px;
-            }
-        }
     }
 }
