@@ -12,15 +12,6 @@ body#home-page {
     height: 100%;
 }
 
-body#not-found-page {
-    text-align: center;
-
-    a {
-        margin: 25px;
-        display: block;
-    }
-}
-
 #container {
     position: relative;
     width: 100%;
@@ -40,6 +31,9 @@ body#not-found-page {
 
     #play-link img {
         width: 35%;
+        min-height: 50px;
+        min-width: 50px;
+        max-height: 80px;
         max-width: 250px;
         position: absolute;
         bottom: 20px;
@@ -47,14 +41,19 @@ body#not-found-page {
     }
 
     #try-webapp-button {
-        max-width: 35%;
+        text-align: center;
+        width: 35%;
+        min-height: 45px;
+        min-width: 50px;
+        max-height: 75px;
+        max-width: 250px;
         position: absolute;
-        bottom: 20px;
+        bottom: 25px;
         right: 20px;
         background-color: $colour-primary;
         color: white;
-        padding: 12px 15px;
-        font-size: 2.5vw;
+        padding: 15px 15px;
+        font-size: 2vw;
         border: 3px solid white;
         border-radius: 10px;
     }

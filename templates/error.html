@@ -40,10 +40,17 @@
 
   <link rel="stylesheet" href="{{ cssSource }}">
 </head>
-<body id="not-found-page">
-  <p>Sorry, this page couldn't be found.</p>
-  <a href="/">Return home</a>
-  <a href="/app/search">Perform a search</a>
+<body>
+  <div class="error-page-header">
+    <a href="/" class="logo-container">
+      <img src="/static/img/logo.png" class="logo" alt="logo" />
+    </a>
+  </div>
+  <div class="error-page-content">
+    <p class="content">Sorry, this page couldn't be found.</p>
+    <a class="content" href="/">Return home</a>
+    <a class="content" href="/app/search">Perform a search</a>
+  </div>
 
   <!-- Analytics -->
   <script>
