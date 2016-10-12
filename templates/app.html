@@ -16,6 +16,13 @@
   <meta name="description" content="Recite an ayah or a single word, and watch as Iqra uses voice recognition and custom algorithms to find the matches in the Quran!">
   <meta name="keywords" content="iqra,quran,ayah,surah,muslim,islam,koran,holy,book,recite,read">
 
+  <!-- Open Graph Meta Data -->
+  <meta property="og:title" content="Iqra App">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ url_for('static', filename='favicons/favicon-194x194.png') }}">
+  <meta property="og:url" content="https://iqraapp.com/app">
+  <meta property="og:description" content="Recite an ayah or a single word, and watch as Iqra uses voice recognition and custom algorithms to find the matches in the Quran!">
+
   <!-- Icons -->
   <link rel="apple-touch-icon" sizes="57x57" href="/static/favicons/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/static/favicons/apple-touch-icon-60x60.png">
@@ -40,16 +47,15 @@
   <!-- Styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
   <link rel="stylesheet" href="{{ cssSource }}">
 </head>
+
 <body>
   <div id="content"></div>
 
   <!-- Javascript -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-
   <script src="{{ jsSource }}"></script>
 
   <!-- Analytics -->
