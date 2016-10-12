@@ -52,7 +52,7 @@ body#home-page {
         right: 20px;
         background-color: $colour-primary;
         color: white;
-        padding: 15px 15px;
+        padding: 15px;
         font-size: 2vw;
         border: 3px solid white;
         border-radius: 10px;
@@ -109,10 +109,7 @@ body#home-page {
 
         img#app-preview {
             width: 100%;
-            padding-left: 5%;
-            padding-right: 5%;
-            padding-top: 50px;
-            padding-bottom: 50px;
+            padding: 50px 5%;
         }
     }
 }
