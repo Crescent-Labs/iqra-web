@@ -2,9 +2,8 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - #{$header-height});
     justify-content: center;
-    padding-bottom: $header-height;
     text-align: center;
     width: 100%;
 

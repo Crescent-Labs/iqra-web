@@ -24,7 +24,7 @@ export default class Header extends Component {
                     </ul>
                     <ul className="side-nav" id="mobile">
                         <li><a href="/">Home</a></li>
-                        <li><Link to="/app">Search</Link></li>
+                        <li><Link to="/app/search">Search</Link></li>
                         <li><Link to="/contributors">Contributors</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                     </ul>
