@@ -8,8 +8,9 @@ export default class NotFound extends Component {
             <div>
                 <Header />
                 <div className="not-found-page">
-                    <p>Sorry, this page couldn't be found.</p>
-                    <Link to="/app/search">Perform a search</Link>
+                    <p className="content">Sorry, this page couldn't be found.</p>
+                    <a className="content" href="/">Return home</a>
+                    <Link className="content" to="/app/search">Perform a search</Link>
                 </div>
             </div>
         );

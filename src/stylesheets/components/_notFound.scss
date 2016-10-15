@@ -1,3 +1,13 @@
 .not-found-page {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - #{$header-height});
+    justify-content: center;
     text-align: center;
+    width: 100%;
+
+    .content {
+        margin: 15px;
+    }
 }

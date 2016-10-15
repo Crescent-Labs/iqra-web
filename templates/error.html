@@ -42,15 +42,50 @@
   <meta name="theme-color" content="#059184">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="{{ cssSource }}">
 </head>
 
-<body id="not-found-page">
-  <p>Sorry, this page couldn't be found.</p>
-  <a href="/">Return home</a>
-  <a href="/app/search">Perform a search</a>
+<body>
+  <nav>
+    <div class="header">
+      <a href="/" class="logo-container">
+        <img src="/static/img/logo.png" class="logo" alt="logo" />
+      </a>
+      <ul class="right desktop-nav hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/app/search">Search</a></li>
+        <li><a href="/contributors">Contributors</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile">
+        <li><a href="/">Home</a></li>
+        <li><a href="/app/search">Search</a></li>
+        <li><a href="/contributors">Contributors</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <a href="#" data-activates="mobile" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+    </div>
+  </nav>
+  <div class="not-found-page">
+    <p class="content">Sorry, this page couldn't be found.</p>
+    <a class="content" href="/">Return home</a>
+    <a class="content" href="/app/search">Perform a search</a>
+  </div>
+
+  <!-- Javascript -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+  <script>
+    $('.button-collapse').sideNav({
+      edge: 'right',
+      closeOnClick: true,
+    });
+  </script>
 
   <!-- Analytics -->
   <script>
