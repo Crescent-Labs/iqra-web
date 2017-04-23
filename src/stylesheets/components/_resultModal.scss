@@ -32,9 +32,21 @@
             }
         }
 
-        .arabic-surah-name {
-            color: LightGray;
-            font-size: 20px;
+        .surah-subheader {
+            display: flex;
+
+            .arabic-surah-name {
+                color: LightGray;
+                flex-grow: 1;
+                font-size: 20px;
+            }
+
+            .quran-dot-com-referral {
+                flex-grow: 1;
+                font-size: 14px;
+                margin: auto;
+                text-align: right;
+            }
         }
     }
 
