@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 export default class ResultModal extends Component {
     render() {
         const { isModalShown, resultObject, closeResultModal } = this.props;
+        const quranDotComReferral = `https://quran.com/${resultObject.surahNum}/${resultObject.ayahNum}`;
 
         return (
             <Modal
@@ -19,7 +20,12 @@ export default class ResultModal extends Component {
                             {resultObject.surahNum}:{resultObject.ayahNum}
                         </div>
                     </div>
-                    <div className="arabic-surah-name">{resultObject.arabicSurahName}</div>
+                    <div className="surah-subheader">
+                        <div className="arabic-surah-name">{resultObject.arabicSurahName}</div>
+                        <div className="quran-dot-com-referral">
+                            <a href={quranDotComReferral} target="_blank">View on Quran.com</a>
+                        </div>
+                    </div>
                 </div>
                 <div className="ayah-block">
                     <div className="arabic-ayah">{resultObject.arabicAyah}</div>
