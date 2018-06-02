@@ -50,12 +50,34 @@
 <body id="home-page">
   <div id="container">
     <h1 id="app-title">Iqra</h1>
-    <a id="play-link" href="https://play.google.com/store/apps/details?id=com.mmmoussa.iqra&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge-border.png" /></a>
+    <a id="app-store-link" target="_blank" href="https://itunes.apple.com/us/app/iqra/id1391009396"><img alt="Get it on the Apple Store" src="/static/img/app-store-badge.png"></a>
+    <a id="play-link" target="_blank" href="https://play.google.com/store/apps/details?id=com.mmmoussa.iqra&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" /></a>
     <a href="#c1"><i class="material-icons more-arrow">keyboard_arrow_down</i></a>
-    <a id="try-webapp-button" href="/app">Try it now!</a>
+    <div id="try-webapp-button-container">
+      <a id="try-webapp-button" href="/app/search">Try it now!</a>
+    </div>
   </div>
   <div id="home-content">
-    <a class="nav-link" name="c1"></a>
+    <nav>
+      <div class="header" name="c1">
+        <a href="/" class="logo-container">
+          <img src="/static/img/logo.png" class="logo" alt="logo" />
+        </a>
+        <ul class="right desktop-nav hide-on-med-and-down">
+          <li><a href="/app/search">Search</a></li>
+          <li><a href="/contributors">Contributors</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile">
+          <li><a href="/app/search">Search</a></li>
+          <li><a href="/contributors">Contributors</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="#" data-activates="mobile" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+    </nav>
     <div class="row">
       <div class="col s12 m8 l9" id="details">
         <h2 class="detail-title">Iqra</h2>
@@ -82,6 +104,13 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  <script>
+    $('.button-collapse').sideNav({
+      edge: 'right',
+      closeOnClick: true,
+    });
+  </script>
 
   <!-- Analytics -->
   <script>

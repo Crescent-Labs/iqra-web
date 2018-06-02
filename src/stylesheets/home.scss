@@ -1,82 +1,86 @@
 html {
-    width: 100%;
     height: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    width: 100%;
 }
 
 body#home-page {
-    background: url(/static/img/background.jpg) no-repeat center center fixed;
     background-size: cover;
-    width: 100%;
+    background: url(/static/img/background.jpg) no-repeat center center fixed;
     height: 100%;
+    width: 100%;
 }
 
 #container {
+    height: 100%;
     position: relative;
     width: 100%;
-    height: 100%;
 }
 
 #home-page {
     h1#app-title {
-        font-size: 80px;
         color: white;
+        font-size: 80px;
         margin: 0px;
         padding-left: 20px;
         padding-top: 20px;
         text-align: center;
+        text-shadow: 2px 2px #000;
         width: 100%;
     }
 
-    #play-link img {
-        width: 35%;
-        min-height: 50px;
-        min-width: 50px;
-        max-height: 80px;
-        max-width: 250px;
+    #app-store-link img {
+        bottom: 90px;
+        left: 33px;
         position: absolute;
+    }
+
+    #play-link img {
         bottom: 20px;
         left: 20px;
+        position: absolute;
+        width: 190px;
+    }
+
+    #try-webapp-button-container {
+        height: 250px;
+        width: 646px;
     }
 
     #try-webapp-button {
-        text-align: center;
-        width: 35%;
-        min-height: 45px;
-        min-width: 50px;
-        max-height: 75px;
-        max-width: 250px;
-        position: absolute;
-        bottom: 25px;
-        right: 20px;
         background-color: $colour-primary;
-        color: white;
-        padding: 15px;
-        font-size: 2vw;
-        border: 3px solid white;
         border-radius: 10px;
+        border: 2px solid white;
+        bottom: 35px;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        position: absolute;
+        right: 35px;
+        text-align: center;
+        width: 180px;
     }
 
     a.download-button {
-        position: absolute;
         bottom: 10px;
+        position: absolute;
         right: 10px;
     }
 
     i.more-arrow {
-        position: absolute;
         bottom: 10px;
-        left: 50%;
-        margin-left: -25px;
         color: white;
         font-size: 50px;
+        left: 50%;
+        margin-left: -25px;
+        position: absolute;
     }
 
     #home-content {
-        width: 100%;
-        min-height: 100%;
         background-color: white;
+        min-height: 100%;
+        width: 100%;
 
         .row {
             margin-bottom: 0px;
@@ -96,9 +100,9 @@ body#home-page {
             }
 
             ul li {
+                font-size: 18px;
                 list-style: disc;
                 margin-left: 40px;
-                font-size: 18px;
             }
 
             #contact-message {
@@ -108,8 +112,56 @@ body#home-page {
         }
 
         img#app-preview {
-            width: 100%;
             padding: 50px 5%;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: $responsive-tablet-width) {
+    #home-page {
+        #app-store-link img {
+            bottom: 80px;
+            left: 25px;
+            width: 130px;
+        }
+
+        #play-link img {
+            bottom: 15px;
+            left: 15px;
+            width: 150px;
+        }
+
+        #try-webapp-button {
+            bottom: 25px;
+            font-size: 14px;
+            padding: 7px;
+            right: 25px;
+            width: 135px;
+        }
+    }
+}
+
+@media (max-width: $responsive-phone-width) {
+    #home-page {
+        #app-store-link img {
+            bottom: 60px;
+            left: 17px;
+            width: 115px;
+        }
+
+        #play-link img {
+            bottom: 10px;
+            left: 10px;
+            width: 130px;
+        }
+
+        #try-webapp-button {
+            bottom: 18px;
+            font-size: 14px;
+            padding: 5px;
+            right: 18px;
+            width: 115px;
         }
     }
 }
