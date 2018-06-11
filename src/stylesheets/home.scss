@@ -6,8 +6,8 @@ html {
 }
 
 body#home-page {
-    background-size: cover;
     background: url(/static/img/background.jpg) no-repeat center center fixed;
+    background-size: cover;
     height: 100%;
     width: 100%;
 }
@@ -32,8 +32,9 @@ body#home-page {
 
     #app-store-link img {
         bottom: 90px;
-        left: 33px;
+        left: 32px;
         position: absolute;
+        width: 165px;
     }
 
     #play-link img {
@@ -41,11 +42,6 @@ body#home-page {
         left: 20px;
         position: absolute;
         width: 190px;
-    }
-
-    #try-webapp-button-container {
-        height: 250px;
-        width: 646px;
     }
 
     #try-webapp-button {
