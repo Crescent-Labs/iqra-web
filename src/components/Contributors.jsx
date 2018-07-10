@@ -33,7 +33,7 @@ export default class Contributors extends Component {
                     <p className="get-involved">
                         If you would like to contribute to this project, <Link to="/contact">
                             send us a message
-                        </Link> or <a href="https://github.com/Crescent-Labs">
+                        </Link> or <a target="_blank" href="https://github.com/Crescent-Labs">
                             check us out on Github
                         </a>.
                     </p>
