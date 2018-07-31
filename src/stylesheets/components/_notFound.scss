@@ -25,8 +25,26 @@
         display: inline-block;
         background-color: $colour-primary;
         color: white;
+        min-width: 140px;
+        text-align: center;
         padding: 12px;
         border-radius: 10px;
         margin: 10px;
+    }
+}
+
+@media (max-height: $responsive-phone-height) {
+    .not-found-page {
+        justify-content: flex-start;
+        margin-top: 40px;
+
+        .logo-image {
+            height: 120px;
+            width: 120px;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
     }
 }

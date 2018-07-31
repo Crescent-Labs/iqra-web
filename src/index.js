@@ -12,6 +12,7 @@ import Main from './components/Main.jsx';
 import Contributors from './components/Contributors.jsx';
 import Contact from './components/Contact.jsx';
 import Thanks from './components/Thanks.jsx';
+import NotFound from './components/NotFound.jsx';
 import RecordingContainer from './containers/RecordingContainer.jsx';
 import ResultListContainer from './containers/ResultListContainer.jsx';
 import mainReducer from './reducers/mainReducer';
@@ -40,6 +41,7 @@ render((
             <Route path="/contributors" component={Contributors} />
             <Route path="/contact" component={Contact} />
             <Route path="/thanks" component={Thanks} />
+            <Route path="*" component={NotFound} />
         </Router>
     </Provider>
 ), document.getElementById('content'));
