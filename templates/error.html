@@ -51,7 +51,7 @@
   <nav>
     <div class="header">
       <a href="/" class="logo-container">
-        <img src="/static/img/logo.png" class="logo" alt="logo" />
+        <img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" alt="logo" />
       </a>
       <ul class="right desktop-nav hide-on-med-and-down">
         <li><a href="/">Home</a></li>
@@ -71,9 +71,12 @@
     </div>
   </nav>
   <div class="not-found-page">
-    <p class="content">Sorry, this page couldn't be found.</p>
-    <a class="content" href="/">Return home</a>
-    <a class="content" href="/app/search">Perform a search</a>
+    <img src="{{ url_for('static', filename='img/logo-green.png') }}" alt="logo" class="logo-image" />
+    <p class="content">Sorry, this page could not be found.</p>
+    <div class="button-container">
+      <a class="button" href="/">Return home</a>
+      <a class="button" href="/app/search">Perform a search</a>
+    </div>
   </div>
 
   <!-- Javascript -->
