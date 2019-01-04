@@ -1,6 +1,7 @@
-'''
-NOTE: Copy this file and rename it to "config.py", then update its values.
-'''
+# NOTE: Copy this file and rename it to "config.py", then update its values.
 
-APIKEY = "APIKEY"  # Replace with api key
-SECRET_KEY = "Any random value"  # Used by SeaSurf for generating CSRF tokens
+API_ROUTE = 'http://0.0.0.0:5000'
+
+# Update these values:
+API_KEY = "abcd"  # Replace with api key
+SECRET_KEY = "abcd"  # Used by SeaSurf for generating CSRF tokens

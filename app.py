@@ -4,7 +4,7 @@ from flask import (
     send_from_directory
 )
 from flask_seasurf import SeaSurf
-from config import APIKEY
+from config import API_KEY, API_ROUTE
 import requests
 import json
 
@@ -12,7 +12,6 @@ import json
 app = Flask(__name__, static_folder="./static", template_folder="./templates")
 app.config.from_object('config')
 csrf = SeaSurf(app)
-API_ROUTE = 'https://api.iqraapp.com'
 
 
 def getAssetSource():
@@ -76,7 +75,7 @@ def getSearchResult():
     if not request.json:
         abort(400)
     reqJSON = request.json
-    reqJSON['apikey'] = APIKEY
+    reqJSON['apikey'] = API_KEY
     res = requests.post(API_ROUTE + '/api/v3.0/search', json=reqJSON)
     return jsonify(res.json())
 
@@ -86,7 +85,7 @@ def updateTranslations():
     if not request.json:
         abort(400)
     reqJSON = request.json
-    reqJSON['apikey'] = APIKEY
+    reqJSON['apikey'] = API_KEY
     res = requests.post(API_ROUTE + '/api/v3.0/translations', json=reqJSON)
     return jsonify(res.json())
 
