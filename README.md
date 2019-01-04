@@ -11,9 +11,9 @@ pip install -r requirements.txt
 npm install
 ```
 
-The next step is to duplicate the `default_config.py` file and name the copy `config.py`. In `config.py`, you'll need to replace the `APIKEY` variable's value with a valid key. You can obtain a key for testing by sending an email to info@iqraapp.com with subject line "api key request". Please allow some time for your request to be processed and an api key sent back.
+The next step is to duplicate the `default_config.py` file and name the copy `config.py`.
 
-Once you've obtained an api key and placed it into `config.py`, you can now run this project locally. Open two tabs in your terminal. In the first tab, run
+You can now run this project locally. Open two tabs in your terminal. In the first tab, run
 
 ```
 python app.py
@@ -25,7 +25,9 @@ and in the second tab run
 npm run dev
 ```
 
-You can now visit the website at [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
+You can now visit the website at [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
+
+To test the website's search-related functionality, you will need to clone [the Iqra API server](https://github.com/Crescent-Labs/iqra-api) and then run it simultaneously.
 
 ### Code style
 
