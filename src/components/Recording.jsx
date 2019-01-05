@@ -94,7 +94,7 @@ export default class Recording extends Component {
 
         recognition = new webkitSpeechRecognition();
         recognition.lang = 'ar-AE';
-        recognition.continuous = true;
+        recognition.continuous = false;
         recognition.interimResults = true;
 
         recognition.onstart = () => {
